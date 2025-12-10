@@ -130,6 +130,7 @@ digunakan.
 ## 👨‍💻 Pembuat
 
 **Diandra Dani Dhaviza**\
+NIM **24091397070**\
 Prodi **Manajemen Informatika**\
 2024
 
