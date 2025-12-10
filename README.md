@@ -65,15 +65,14 @@ digunakan.
 
 ## 🗂️ Struktur Proyek
 
-    /root
+    /library_system
     │── index.php
     │── mahasiswa/
     │── buku/
     │── peminjaman/
-    │── assets/
-    │    ├── css/
-    │    └── js/
-    │── config/
+    │── css/
+    │── js/
+    │── config/ 
     │── sql/
     │── README.md
 
@@ -98,12 +97,12 @@ digunakan.
 
 2.  Tempatkan project ke folder:
 
-        htdocs/library-system
+        htdocs/library_system
 
 3.  Buat database:
 
     ``` sql
-    CREATE DATABASE library_db;
+    CREATE DATABASE library_system ;
     ```
 
 4.  Import file SQL pada folder `/sql/`\
@@ -114,7 +113,7 @@ digunakan.
 
 6.  Jalankan di browser:
 
-        http://localhost/library-system
+        http://localhost/library_system
 
 ------------------------------------------------------------------------
 
