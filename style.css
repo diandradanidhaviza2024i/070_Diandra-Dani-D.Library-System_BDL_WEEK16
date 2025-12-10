@@ -1,0 +1,253 @@
+
+:root {
+    --bg: #eef1f6;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+  
+    --primary: #2563eb;
+    --primary-hover: #1e4fcc;
+  
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
+  
+    --border: #d1d5db;
+  }
+  
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --card: #161b22;
+    --text: #e6edf3;
+    --muted: #9ca3af;
+    --border: #2b323b;
+  
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+  }
+  
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    padding: 25px;
+    transition: 0.25s ease;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    background: var(--card);
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+  }
+  
+  h1 {
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 18px 0;
+  }
+  
+  input {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    width: 250px;
+    background: var(--card);
+    color: var(--text);
+    transition: 0.2s;
+  }
+  
+  input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+    outline: none;
+  }
+
+  button, .btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: 600;
+  }
+  
+  button:hover, .btn:hover {
+    background: var(--primary-hover);
+  }
+  
+  .btn.small {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .btn.danger {
+    background: var(--danger);
+  }
+  .btn.danger:hover {
+    background: #b91c1c;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  thead {
+    background: var(--primary);
+    color: white;
+  }
+  
+  thead th {
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  tbody tr {
+    background: var(--card);
+    transition: 0.2s ease;
+  }
+  
+  tbody tr:hover {
+    background: rgba(37,99,235,0.10);
+  }
+  
+  [data-theme="dark"] tbody tr:hover {
+    background: rgba(59,130,246,0.15);
+  }
+  
+  tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 14px;
+  }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 700px) {
+    .controls {
+      flex-direction: column;
+    }
+  
+    input {
+      width: 100%;
+    }
+  
+    table, th, td {
+      font-size: 13px;
+    }
+  
+    .container {
+      padding: 18px;
+    }
+  }
+  
+  /*CSS UNTUK JS
+  /* Fade in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.4s forwards;
+  }
+  .fade-in-slow {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.7s forwards;
+  }
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  /* Highlight overdue rows */
+  .row-overdue {
+    background: rgba(220, 38, 38, 0.12) !important;
+    font-weight: 600;
+  }
+  
+  /* SnackBar / Toast */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+    font-size: 15px;
+    z-index: 9999;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Custom confirm popup */
+  .confirm-box {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+  }
+  .confirm-card {
+    background: var(--card);
+    padding: 18px 24px;
+    border-radius: 12px;
+    width: 280px;
+    text-align:center;
+    border: 1px solid var(--border);
+  }
+  .confirm-btns {
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+    justify-content:center;
+  }
+  .confirm-btns button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+  }
+  .confirm-btns #yesBtn { background: var(--danger); color: white; }
+  .confirm-btns #noBtn { background: var(--border); color: var(--text); }
+  
